@@ -1,5 +1,17 @@
 module RandomParamApprox
 
+using Distributions
+using ForwardDiff
+using Combinatorics
+using StatsBase, Statistics
+using LinearAlgebra
+using Random
+using Plots
+using KernelDensity
+using StatsFuns
+using Interpolations
+using Roots
+
 export GammaAlt, GammaAltNegative, DiracContinuous, Copula, GaussianCopula, marginalize, MvDependent, MvGamma
 export approximate_moments, 
        approximate_mean_variance_skewness, 
@@ -13,6 +25,5 @@ include("approximations.jl")
 include("distributions.jl")
 include("moments.jl")
 include("plotting.jl")
-include("correlation_data.jl")
 
 end

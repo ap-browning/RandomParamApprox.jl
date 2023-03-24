@@ -168,8 +168,9 @@ vec_to_cor(p::Real) = vec_to_cor([p])
 ## Create correlated gamma
 ##############################################################
 
-# Load correlation data from file
-data = load("/Users/Alex/Code/RandomParameters/Module/correlation_data.jld2","W₁","W₂","P̃","P")
+# Load correlation data
+include("correlation_data.jl")
+data = (W₁,W₂,P̃,P)
 
 # Construct forward interpolation
 itp = LinearInterpolation(data[1:3],data[4],extrapolation_bc=Interpolations.Flat())
